@@ -1,5 +1,4 @@
 sequelize model:generate --name user_account --attributes "id:integer, user_name:string, password:string , last_modified:date, last_modified_by:string" --force true
 sequelize model:generate --name multi_week_goal --attributes "id:integer, goal_name:string, last_modified:date, last_modified_by:string" --force true
 sequelize model:generate --name goal_week --attributes "id:integer, goal_week_number:integer,multi_week_goal_id:integer, last_modified:date, last_modified_by:string" --force true
-sequelize model:generate --name set_times --attributes "set_time_id:integer, event_id:integer, stage_id:integer, band_id:integer, start_time:date, end_time:date" --force true
-sequelize model:generate --name meet_greets --attributes "meet_greet_id:integer, event_id:integer, band_id:integer, meet_start_time:date, meet_end_time:date" --force true
+sequelize model:generate --name goal_day --attributes "id:integer, goal_day_number:integer, duration:integer, duration_unit:string, distance:integer, distance_unit:string, notes:string, goal_week_id:integer, last_modified:date, last_modified_by:string" --force true
