@@ -14,14 +14,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   user_account.init({
-    id: DataTypes.INTEGER,
-    user_name: DataTypes.STRING,
-    password: DataTypes.STRING,
-    last_modified: DataTypes.DATE,
-    last_modified_by: DataTypes.STRING
-  }, {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    user_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    last_modified: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    last_modified_by: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }    
+  }, {    
     sequelize,
-    modelName: 'user_account',
+    modelName: 'User_Account',
+    tableName: 'user_account',
+    timestamps: false    
   });
   return user_account;
 };

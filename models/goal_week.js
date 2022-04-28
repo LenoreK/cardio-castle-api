@@ -14,14 +14,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   goal_week.init({
-    id: DataTypes.INTEGER,
-    goal_week_number: DataTypes.INTEGER,
-    multi_week_goal_id: DataTypes.INTEGER,
-    last_modified: DataTypes.DATE,
-    last_modified_by: DataTypes.STRING
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    goal_week_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    multi_week_goal_id: { 
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },    
+    last_modified: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    last_modified_by: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'goal_week',
+    modelName: 'Goal_Week',
+    tableName: 'goal_week',
+    timestamps: false
   });
   return goal_week;
 };

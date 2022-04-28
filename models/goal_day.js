@@ -14,19 +14,56 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   goal_day.init({
-    id: DataTypes.INTEGER,
-    goal_day_number: DataTypes.INTEGER,
-    duration: DataTypes.INTEGER,
-    duration_unit: DataTypes.STRING,
-    distance: DataTypes.INTEGER,
-    distance_unit: DataTypes.STRING,
-    notes: DataTypes.STRING,
-    goal_week_id: DataTypes.INTEGER,
-    last_modified: DataTypes.DATE,
-    last_modified_by: DataTypes.STRING
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    goal_day_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    duration:{
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    duration_unit: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    distance:{
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    distance_unit: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    notes: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    mood_index: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },    
+    goal_week_id: { 
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    last_modified: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    last_modified_by: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'goal_day',
+    modelName: 'Goal_Day',
+    tableName: 'goal_day',
+    timestamps: false
   });
   return goal_day;
 };
