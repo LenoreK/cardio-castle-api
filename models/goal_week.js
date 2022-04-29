@@ -3,17 +3,15 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class goal_week extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+  class Goal_Week extends Model {
+    static associate(Goal_Day) {
+      Goal_Week.hasMany(Goal_Day, {
+        foreignKey: "goal_week_id",
+        as: "goal_days"
+      })
     }
   }
-  goal_week.init({
+  Goal_Week.init({
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
