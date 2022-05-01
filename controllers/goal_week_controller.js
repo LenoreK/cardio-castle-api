@@ -1,7 +1,7 @@
 // DEPENDENCIES
-const  = goalWeek require('express').Router()
+const  goalWeek = require('express').Router()
 const db = require('../models')
-const { id, Goal_week_number, Multi_week, Multi_week_goal_id, last_modified, last last_modified_by } = db
+const { id, Goal_week_number, Multi_week, Multi_week_goal_id, last_modified, last_modified_by } = db
 const { Op } = require('sequelize')
 
 // FIND ALL Weekly Goals
@@ -80,4 +80,4 @@ goalWeek.delete('/:id', async (req, res) => {
 
 
 // EXPORT
-module.exports = goal_week
+module.exports = Goal_week
