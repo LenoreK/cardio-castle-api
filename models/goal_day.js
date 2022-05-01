@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Goal_Day',
-    tableName: 'goal_days',
+    tableName: 'goal_day',
     timestamps: false
   });
   return Goal_Day;

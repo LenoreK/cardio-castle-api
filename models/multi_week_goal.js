@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Multi_Week_Goal',
-    tableName: 'multi_week_goals',
+    tableName: 'multi_week_goal',
     timestamps: false
   });
   return Multi_Week_Goal;
