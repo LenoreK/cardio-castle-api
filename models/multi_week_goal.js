@@ -32,6 +32,10 @@ module.exports = (sequelize, DataTypes) => {
     last_modified_by: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    user_account_id: { 
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     sequelize,
