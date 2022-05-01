@@ -3,7 +3,6 @@ const userAccounts = require('express').Router()
 const db = require('../models')
 const { User_Account, multi_week_goal, goal_week, goal_day } = db
 const { Op } = require('sequelize')
-const userAccounts = require('./araz_user_account_controller')
 
 // FIND ALL USER ACCOUNTS
 userAccounts.get('/', async (req, res) => {
