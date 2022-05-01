@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 })
 
 // CONTROLLERS 
-const usersController = require('./controllers/araz_user_account_controller')
-app.use('/arazusers', usersController)
+const usersController = require('./controllers/user_account_controller')
+app.use('/users', usersController)
 
 // const eventsController = require('./controllers/events_controller')
 // app.use('/events', eventsController)
