@@ -4,7 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Goal_Day extends Model {    
-    static associate(Goal_Week) {
+    static associate({Goal_Week}) {
       Goal_Day.belongsTo(Goal_Week, {
         foreignKey: "goal_week_id",
         as: "goal_week"
@@ -60,8 +60,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Goal_Day',
-    tableName: 'goal_day',
+    tableName: 'goal_days',
     timestamps: false
   });
-  return goal_day;
+  return Goal_Day;
 };
