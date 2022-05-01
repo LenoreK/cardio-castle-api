@@ -1,15 +1,13 @@
-
 // DEPENDENCIES
-const multi_week_goal = require('express').Router()
+const multiWeekGoal = require('express').Router()
 const db = require('../models')
-const { ID, goal_name, last_modified, last_modified_by } = db
+const { User_Account, Multi_Week_Goal, Goal_Week, Goal_Day  } = db
 const { Op } = require('sequelize')
-const meetGreet = require('../models/multi_week_goal')
 
 // FIND ALL Weekly Goals
-multi_week_goal.get('/', async (req, res) => {
+multiWeekGoal.get('/', async (req, res) => {
     try {
-        const foundItem = await Band.findAll()
+        const foundItem = await Multi_Week_Goal.findAll()
         res.status(200).json(foundItem)
     } catch (error) {
         res.status(500).json(error)
@@ -17,14 +15,14 @@ multi_week_goal.get('/', async (req, res) => {
   })
 
 // FIND A SPECIFIC Goal
-multi_week_goal.get('/:name', async (req, res) => {
+multiWeekGoal.get('/:name', async (req, res) => {
     try {
         var _name = req.params.name ? req.params.name : '';
         console.log( `%${_name}%`)
-        const foundBand = await multi_week_goal.findOne({
+        const foundBand = await Multi_Week_Goal.findOne({
             where: 
                 { 
-                    name: { [Op.like]: `%${_name}%` }
+                    goal_name: { [Op.like]: `%${_name}%` }
                 }            
         })
         res.status(200).json(foundBand)
@@ -34,11 +32,11 @@ multi_week_goal.get('/:name', async (req, res) => {
 })
 
 // CREATE A MULTI WEEK GOAL
-multi_week_goal.post('/', async (req, res) => {
+multiWeekGoal.post('/', async (req, res) => {
     try {
-        const newItem = await multi_week_goal.create(req.body)
+        const newItem = await Multi_Week_Goal.create(req.body)
         res.status(200).json({
-            message: 'New Weekly Goal Created',
+            message: 'A new multi-week goal was created.',
             data: newItem
         })
     } catch(err) {
@@ -47,15 +45,15 @@ multi_week_goal.post('/', async (req, res) => {
 })
 
 // UPDATE A UPDATE A MULTI WEEK GOAL
-multi_week_goal.put('/:id', async (req, res) => {
+multiWeekGoal.put('/:id', async (req, res) => {
     try {
-        const updatedItems = await multi_week_goal.update(req.body, {
+        const updatedItems = await Multi_Week_Goal.update(req.body, {
             where: {
-                band_id: req.params.id
+                id: req.params.id
             }
         })
         res.status(200).json({
-            message: `Successfully updated ${updatedBands} multi week goal(s)`
+            message: `Successfully updated ${updatedItems} multi week goal(s)`
         })
     } catch(err) {
         res.status(500).json(err)
@@ -63,15 +61,15 @@ multi_week_goal.put('/:id', async (req, res) => {
 })
 
 // DELETE A MULTI WEEK GOAL
-multi_week_goal.delete('/:id', async (req, res) => {
+multiWeekGoal.delete('/:id', async (req, res) => {
     try {
-        const deletedItems = await multi_week_goal.destroy({
+        const deletedItems = await Multi_Week_Goal.destroy({
             where: {
-                band_id: req.params.id
+                id: req.params.id
             }
         })
         res.status(200).json({
-            message: `Successfully deleted ${deletedBands} multi week goal(s)`
+            message: `Successfully deleted ${deletedItems} multi week goal(s)`
         })
     } catch(err) {
         res.status(500).json(err)
@@ -80,4 +78,4 @@ multi_week_goal.delete('/:id', async (req, res) => {
 
 
 // EXPORT
-module.exports = multi_week_goal
+module.exports = multiWeekGoal

@@ -17,7 +17,7 @@ goalWeek.get('/', async (req, res) => {
 // FIND A Current Weekly Goal
 goalWeek.get('/:goalName/:weekNumber', async (req, res) => {
     try {
-        var _name = req.params.name ? req.params.name : '';
+        var _name = req.params.goalName ? req.params.goalName : '';
         console.log( `%${_name}%`)
         const foundItem = await Multi_Week_Goal.findOne({
             where: {
