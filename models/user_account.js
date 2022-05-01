@@ -4,8 +4,11 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User_Account extends Model {    
-    static associate(models) {
-      // None
+    static associate({Multi_Week_Goal}) {
+      User_Account.hasMany(Multi_Week_Goal, {
+        foreignKey: "user_account_id",
+        as: "user_goals"
+      })
     }
   }
   User_Account.init({
