@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
 const usersController = require('./controllers/user_account_controller')
 app.use('/users', usersController)
 
-// const eventsController = require('./controllers/events_controller')
-// app.use('/events', eventsController)
+const goalWeekController = require('./controllers/goal_week_controller')
+app.use('/goalWeeks', goalWeekController)
  
 // const stagesController = require('./controllers/stages_controller')
 // app.use('/stages', stagesController)
