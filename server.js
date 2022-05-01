@@ -25,6 +25,8 @@ app.use('/arazusers', usersController)
 // const stagesController = require('./controllers/stages_controller')
 // app.use('/stages', stagesController)
 
+
+
 // LISTEN
 app.listen(process.env.PORT, () => {
     console.log(`:o> running on port: ${process.env.PORT}`)

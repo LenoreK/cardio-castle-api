@@ -3,6 +3,7 @@ const user_account = require('express').Router()
 const db = require('../models')
 const { id, user_name, password, last_modified, last_modified_by } = db
 const { Op } = require('sequelize')
+const userAccounts = require('./araz_user_account_controller')
 
 // FIND ALL USER_ACCOUNT
 userAccounts.get('/', async (req, res) => {
@@ -61,4 +62,4 @@ userAccounts.delete('/:id', async (req, res) => {
 })
 
 // EXPORT
-module.exports = user_account
+module.exports = userAccounts
