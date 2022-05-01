@@ -16,14 +16,12 @@ app.get('/', (req, res) => {
 })
 
 // CONTROLLERS 
-// const bandsController = require('./controllers/bands_controller')
-// app.use('/bands', bandsController)
+const usersController = require('./controllers/araz_user_account_controller')
+app.use('/arazusers', usersController)
 
-// CONTROLLERS 
 // const eventsController = require('./controllers/events_controller')
 // app.use('/events', eventsController)
-
-// CONTROLLERS 
+ 
 // const stagesController = require('./controllers/stages_controller')
 // app.use('/stages', stagesController)
 
