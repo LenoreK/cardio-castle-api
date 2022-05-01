@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const userAccounts = require('express').Router()
 const db = require('../models')
-const { User_Account, Multi_Week_Goal, Goal_Week, Goal_Day } = db
+const { User_Account, multi_week_goal, goal_week, goal_day } = db
 const { Op } = require('sequelize')
 const userAccounts = require('./araz_user_account_controller')
 
