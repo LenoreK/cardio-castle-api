@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Goal_Week',
-    tableName: 'goal_weeks',
+    tableName: 'goal_week',
     timestamps: false
   });
   return Goal_Week;
