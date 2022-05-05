@@ -52,12 +52,12 @@
 We are building a user experience to modivate the passionate runner to set goals and accomplish those goals!
 
 Application Features:
-* User Login: The user will have a "secure" login page to make sure there goals and cardio castle information is secret.
-* Four Week Goal Name: The user will name the goal and claim victory when they complete there goals as they work through the application.
+* User Login: The user will have a "secure" login page to make sure their goals and cardio castle information is secret.
+* Four Week Goal Name: The user will name the goal and claim victory when they complete their goals as they work through the application.
 * Weeks and Days: When a goal is named the application lays out the weeks and days for the user to enter there duration and distance for each day.
 * Mood Index: The user can set the mood at the end of the workout by choosing different icons to record how they feel they did that day!
 
-Overall, we here at www.cardiocastle.com what to encurage all road warriors to work there heart out and record there progress.
+Overall, we here at www.cardiocastle.com want to encurage all road warriors to achieve their fitness goals and live healthy lives.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -76,7 +76,9 @@ Overall, we here at www.cardiocastle.com what to encurage all road warriors to w
 
 ### Prerequisites
 
-We list what is needed by the user to get the app running.  Minimum Computer Requirements. They cannot run Windows 98
+* Equipment
+    - Windows 10 or better
+    - macOS Monterey 12.3.1
 
 ### Installation
 
@@ -128,8 +130,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Contact
 
 Araz Shahinian - [@arshahinian](arshahinian@gmail.com)
+Lenore Kelly - [@lenoreK](lenoreK@gmail.com)
+Edwin William =  [ewilliam908](edwinwilliam908@gmail.com)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/LenoreK/cardio-castle](https://github.com/LenoreK/cardio-castle-api)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
