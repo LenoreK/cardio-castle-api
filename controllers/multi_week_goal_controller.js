@@ -1,6 +1,6 @@
 
 // DEPENDENCIES
-const multi_week_goal = require('express').Router()
+const multiWweekGoals = require('express').Router()
 const db = require('../models')
 const { User_Account, Multi_Week_Goal, Goal_Week, Goal_Day  }  = db
 const { Op } = require('sequelize')
@@ -91,4 +91,4 @@ multi_week_goal.delete('/:id', async (req, res) => {
 
 
 // EXPORT
-module.exports = multi_week_goal
+module.exports = multiWweekGoals
