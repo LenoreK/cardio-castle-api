@@ -23,6 +23,9 @@ app.use('/users', usersController)
 
 const goalWeekController = require('./controllers/goal_week_controller')
 app.use('/goalWeeks', goalWeekController)
+
+const goalController = require('./controllers/multi_week_goal_controller')
+app.use('/goals', goalController)
  
 // const stagesController = require('./controllers/stages_controller')
 // app.use('/stages', stagesController)
