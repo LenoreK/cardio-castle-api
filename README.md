@@ -108,9 +108,8 @@ Below are snippets of our login and User screens.
 ![Getting Started](./public/Capture-cardio_castle.JPG)
 ![Getting Started](./public/Capture-Login_page.JPG)
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Backend](https://cardio-castle-foundation.herokuapp.com/)
+                                        [Frontend](https://cardio-castle.herokuapp.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -119,10 +118,22 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [x] Add Additional Templates w/ Examples
-- [x] Add "components" document to easily copy & paste sections of the readme
+- [x] Front End
+    -ReadMe
+    -HTML/CSS
+    -Componets
+    -testing/debugging
+    -connect to heroku
+    -deploy
+
+- [x] Back-End
+    -ReadMe
+    -Controllers
+    -Models
+    -Postrgres/SQl connection
+    -testing/debugging
+    -connect to heroku
+    -deploy
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -140,15 +151,8 @@ Project Link: [https://github.com/LenoreK/cardio-castle](https://github.com/Leno
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [code assistance](https://reactjs.org/docs/hooks-effect.html)
+* [code assistance](https://stackoverflow.com/)
+* [Inspiration](www.youtube.com)  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
