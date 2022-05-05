@@ -2,32 +2,43 @@
 // DEPENDENCIES
 const multiWweekGoals = require('express').Router()
 const db = require('../models')
-const { User_account, multi_week_goal, goal_week, goal_day } = db
+const { User_Account, Multi_Week_Goal, Goal_Week, Goal_Day  }  = db
 const { Op } = require('sequelize')
-const meetGreet = require('../models/multi_week_goal')
 
 // FIND ALL Weekly Goals
 multi_week_goal.get('/', async (req, res) => {
     try {
-        const foundItem = await Band.findAll()
+        const foundItem = await Multi_Week_Goal.findAll()
         res.status(200).json(foundItem)
     } catch (error) {
         res.status(500).json(error)
     }
   })
 
-// FIND A SPECIFIC Goal
-multi_week_goal.get('/:name', async (req, res) => {
+// FIND the Current Goal for the user
+multi_week_goal.get('/:goalName', async (req, res) => {
     try {
         var _name = req.params.name ? req.params.name : '';
+        var _userId = req.query.userId ? req.query.userId : 0;
         console.log( `%${_name}%`)
-        const foundBand = await multi_week_goal.findOne({
-            where: 
-                { 
-                    name: { [Op.like]: `%${_name}%` }
-                }            
+        const foundItem = await Multi_Week_Goal.findOne({
+            where: {
+                [Op.and]: [
+                    {goal_name: { [Op.like]: `%${_name}%` }}
+                    ,{goal_status: 1}
+                    ,{user_account_id: _userId}
+                ]
+            },
+            include: {
+                model: Goal_Week
+                , as: "goal_weeks"                
+                , include: {
+                    model: Goal_Day
+                    , as: "goal_days"                    
+                }
+            }
         })
-        res.status(200).json(foundBand)
+        res.status(200).json(foundItem)
     } catch (error) {
         res.status(500).json(error)
     }
@@ -36,7 +47,7 @@ multi_week_goal.get('/:name', async (req, res) => {
 // CREATE A MULTI WEEK GOAL
 multi_week_goal.post('/', async (req, res) => {
     try {
-        const newItem = await multi_week_goal.create(req.body)
+        const newItem = await Multi_Week_Goal.create(req.body)
         res.status(200).json({
             message: 'New Weekly Goal Created',
             data: newItem
@@ -49,7 +60,7 @@ multi_week_goal.post('/', async (req, res) => {
 // UPDATE A UPDATE A MULTI WEEK GOAL
 multi_week_goal.put('/:id', async (req, res) => {
     try {
-        const updatedItems = await multi_week_goal.update(req.body, {
+        const updatedItems = await Multi_Week_Goal.update(req.body, {
             where: {
                 band_id: req.params.id
             }
