@@ -1,13 +1,13 @@
 // DEPENDENCIES
 const goalDay = require('express').Router()
 const db = require('../models')
-const { Goal_day, Goal_day_number, Duration, duration_unit, Distance, Distance_unit, Notes, Goal_week_ID, Last_modified, last_modified_by, } = db
+const { User_Account, Multi_Week_Goal, Goal_Week, Goal_Day  } = db
 const { Op } = require('sequelize')
 
 // FIND GOAL_DAY
 goalDay.get('/', async (req, res) => {
     try {
-        const foundItem = await Goal_day.findAll()
+        const foundItem = await Goal_Day.findAll()
         res.status(200).json(foundItem)
     } catch (error) {
         res.status(500).json(error)
@@ -19,7 +19,7 @@ goalDay.get('/:name', async (req, res) => {
     try {
         var _name = req.params.name ? req.params.name : '';
         console.log( `%${_name}%`)
-        const foundItem = await Goal_day.findOne({
+        const foundItem = await Goal_Day.findOne({
             where: 
                 { 
                     name: { [Op.like]: `%${_name}%` }
@@ -34,7 +34,7 @@ goalDay.get('/:name', async (req, res) => {
 // CREATE A GOAL_DAY
 goalDay.post('/', async (req, res) => {
     try {
-        const newItem = await Goal_day.create(req.body)
+        const newItem = await Goal_Day.create(req.body)
         res.status(200).json({
             message: 'Successfully inserted a new Goal Day',
             data: newItem
@@ -47,7 +47,7 @@ goalDay.post('/', async (req, res) => {
 // UPDATE GOAL_DAY
 goalDay.put('/:id', async (req, res) => {
     try {
-        const updatedItems = await Goal_day.update(req.body, {
+        const updatedItems = await Goal_Day.update(req.body, {
             where: 
                 {
                     id: req.params.id
@@ -64,7 +64,7 @@ goalDay.put('/:id', async (req, res) => {
 // DELETE GOAL_DAY
 goalDay.delete('/:id', async (req, res) => {
     try {
-        const deletedItems = await Goal_day.destroy({
+        const deletedItems = await Goal_Day.destroy({
             where:
                 {
                     id: req.params.id
