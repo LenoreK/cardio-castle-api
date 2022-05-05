@@ -6,7 +6,7 @@ const { User_Account, Multi_Week_Goal, Goal_Week, Goal_Day  }  = db
 const { Op } = require('sequelize')
 
 // FIND ALL Weekly Goals
-multi_week_goal.get('/', async (req, res) => {
+multiWweekGoals.get('/', async (req, res) => {
     try {
         const foundItem = await Multi_Week_Goal.findAll()
         res.status(200).json(foundItem)
@@ -16,7 +16,7 @@ multi_week_goal.get('/', async (req, res) => {
   })
 
 // FIND the Current Goal for the user
-multi_week_goal.get('/:goalName', async (req, res) => {
+multiWweekGoals.get('/:goalName', async (req, res) => {
     try {
         var _name = req.params.name ? req.params.name : '';
         var _userId = req.query.userId ? req.query.userId : 0;
@@ -45,7 +45,7 @@ multi_week_goal.get('/:goalName', async (req, res) => {
 })
 
 // CREATE A MULTI WEEK GOAL
-multi_week_goal.post('/', async (req, res) => {
+multiWweekGoals.post('/', async (req, res) => {
     try {
         const newItem = await Multi_Week_Goal.create(req.body)
         res.status(200).json({
@@ -58,7 +58,7 @@ multi_week_goal.post('/', async (req, res) => {
 })
 
 // UPDATE A UPDATE A MULTI WEEK GOAL
-multi_week_goal.put('/:id', async (req, res) => {
+multiWweekGoals.put('/:id', async (req, res) => {
     try {
         const updatedItems = await Multi_Week_Goal.update(req.body, {
             where: {
@@ -74,7 +74,7 @@ multi_week_goal.put('/:id', async (req, res) => {
 })
 
 // DELETE A MULTI WEEK GOAL
-multi_week_goal.delete('/:id', async (req, res) => {
+multiWweekGoals.delete('/:id', async (req, res) => {
     try {
         const deletedItems = await multi_week_goal.destroy({
             where: {
