@@ -1,0 +1,14 @@
+ALTER TABLE multi_week_goal 
+ADD CONSTRAINT cc_mwg_user_acct_id 
+FOREIGN KEY (user_account_id) 
+REFERENCES user_account (id);
+
+ALTER TABLE goal_week 
+ADD CONSTRAINT cc_goalweek_mwg_id 
+FOREIGN KEY (multi_week_goal_id) 
+REFERENCES multi_week_goal (id);
+
+ALTER TABLE goal_week 
+ADD CONSTRAINT cc_goalweek_mwg_id 
+FOREIGN KEY (multi_week_goal_id) 
+REFERENCES multi_week_goal (id);
