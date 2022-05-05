@@ -25,7 +25,7 @@ goalDay.get('/:name', async (req, res) => {
                     name: { [Op.like]: `%${_name}%` }
                 }            
         })
-        res.status(200).json(foundBand)
+        res.status(200).json(foundItem)
     } catch (error) {
         res.status(500).json(error)
     }
